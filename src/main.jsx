@@ -33,6 +33,6 @@ import DynamiqueStyle from './DynamiqueStyle'
 
 createRoot(document.getElementById('root')).render(
     <>
-        <DynamiqueStyle />
+        <ToDoList />
     </>
 )

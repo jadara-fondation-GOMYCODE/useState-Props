@@ -1,11 +1,30 @@
+import { useState } from "react"
+
+
 function ToDoList() {
-    const todo = ['anroh']
-    return(
+    const[inputValue,setInputValue] = useState('here is my todo liste')
+    const[todos, setTodo] = useState([''])
+
+   
+
+    return (
         <>
-            <input type="text" />
-            <button>ADD TODO</button>
+            <input
+                type="text"
+                value={inputValue}
+                onChange={(e)=>{
+                    setInputValue(e.target.value)
+                }}
+            />
+            <button onClick={()=>{
+                setTodo([...todos,inputValue])
+                setInputValue('')
+                
+            }} >ADD TODO</button>
             <ul>
-                <li>sdfdf</li>
+                {todos.map(
+                    (todos, index) => <li key={index}>{todos}</li>
+                )}
             </ul>
         </>
     )
